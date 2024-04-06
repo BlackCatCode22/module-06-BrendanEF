@@ -37,3 +37,54 @@ sampleClass, lifecycle, inheritance
 __ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', 'party', 'x']`
 `Type <class 'int'>`
 `Type <class 'method'>`
+
+---
+
+## Lifecycle Video Code
+
+`# class PartyAnimal:`
+
+`#     def __init__(self):`
+`#         self.x = 0`
+`#         print("constructed")`
+
+`#     def party(self):`
+`#         self.x = self.x + 1`
+`#         print("So far", self.x)`
+
+`#     def __del__(self):`
+`#         print("I am destructed", self.x)`
+
+
+`# an = PartyAnimal()`
+`# an.party()`
+`# an.party()`
+`# an = 42`
+`# print("an contains" ,an)`
+
+`class PartyAnimal:`
+
+   `def __init__(self, z):`
+        `self.x = 0`
+        `self.name = z`
+        `print(self.name, "constructed")`
+
+    `def party(self):`
+        `self.x = self.x + 1`
+        `print(self.name, "party count", self.x)`
+
+`s = PartyAnimal("Sally")`
+`s.party()`
+`j = PartyAnimal("Jim")`
+
+`j.party()`
+`s.party()`
+
+### Windows PowerShell Terminal
+
+`(.venv) PS C:\Users\Brendan\PycharmProjects\CIT95SPRING2024\CIT95python> py lifecycle_Module6.py`
+`Sally constructed`
+`Sally party count 1`                                                
+`Jim constructed`                                                         
+`Jim party count 1`                                                        
+`Sally party count 2`          
