@@ -88,3 +88,48 @@ __ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '_
 `Jim constructed`                                                         
 `Jim party count 1`                                                        
 `Sally party count 2`          
+
+---
+
+## Inheritance Video Code
+
+`class PartyAnimal:`
+
+    `def __init__(self, nam):`
+        `self.x = 0`
+        `self.name = nam`
+       `print(self.name, "constructed")`
+
+    `def party(self):`
+        `self.x = self.x + 1`
+        `print(self.name, "party count", self.x)`
+
+
+`class FootballFan(PartyAnimal):`
+
+    `def __init__(self, nam):`
+        `super().__init__(nam)`
+        `self.points = 0`
+
+    `def touchdown(self):`
+        `self.points = self.points + 7`
+        `self.party()`
+        `print(self.name, "points", self.points)`
+
+
+`s = PartyAnimal("Sally")`
+`s.party()`
+
+`j = FootballFan("Jim")`
+`j.party()`
+`j.touchdown()`
+
+### Windows PowerShell Terminal
+
+`(.venv) PS C:\Users\Brendan\PycharmProjects\CIT95SPRING2024\CIT95python> py inheritance_Module6.py`
+`Sally constructed`
+`Sally party count 1`                                                 
+`Jim constructed`                                                          
+`Jim party count 1`                                                        
+`Jim party count 2`                                                        
+`Jim points 7`          
